@@ -1,6 +1,7 @@
 const links = document.querySelectorAll('.menu-list__link');
 const btn = document.querySelector('.main__button');
-const allLinks = [...links, btn]
+const mainScroll = document.querySelector('.main__scroll');
+const allLinks = [...links, btn,  mainScroll]
 
 allLinks.forEach(link => {
   link.addEventListener('click', (evt) => {
