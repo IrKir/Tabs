@@ -42,7 +42,7 @@ form.addEventListener('submit', (evt) => {
 
 // Для всех форм на странице
 
-const forms = document.querySelectorAll('.form');
+const forms = document.querySelectorAll('form');
 
 forms.forEach((form) => {
 
