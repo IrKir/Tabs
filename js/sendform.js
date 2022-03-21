@@ -58,27 +58,27 @@ forms.forEach((form) => {
     }) // заполняем объект данных формы
 
     fetch('https://jsonplaceholder.typicode.com/posts', {
-    method: 'POST',
-    body: JSON.stringify(body), //переводит данные в строку
-    headers: {
-      'Content-type': 'application/json; charset=UTF-8',
-    },
-    }) // отправка данных
-      .then(response => {
-        if (response.ok) {
-          return response.json(); // принимаем объект response и переводим его в нужный формат методом .json()
-        } else {
-          throw new Error(response.status)
-        }
-      })
-      .then(data => {
-        alert('Данные отправлены успешно')
-      }) // сюда поступает data в нужном нам формате (то, что возвращает сервер)
-      .catch(error => {
-        alert('Данные отправлены с ошибкой ' + error.message)
-      }) // ловит ошибку и сообщает об этом
-      .finally(() => {
-        form.reset();
-      })  
-  })
+      method: 'POST',
+      body: JSON.stringify(body), //переводит данные в строку
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+      }) // отправка данных
+        .then(response => {
+          if (response.ok) {
+            return response.json(); // принимаем объект response и переводим его в нужный формат методом .json()
+          } else {
+            throw new Error(response.status)
+          }
+        })
+        .then(data => {
+          alert('Данные отправлены успешно')
+        }) // сюда поступает data в нужном нам формате (то, что возвращает сервер)
+        .catch(error => {
+          alert('Данные отправлены с ошибкой ' + error.message)
+        }) // ловит ошибку и сообщает об этом
+        .finally(() => {
+          form.reset();
+        })  
+    })
 })
